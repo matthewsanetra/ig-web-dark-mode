@@ -13,10 +13,7 @@
 (function () {
   "use strict";
 
-  if (window.location.search.lastIndexOf("theme=dark") === -1) {
-    let append = "theme=dark";
-    if (window.location.search !== "") append = "&" + append;
-
-    window.location.search += append;
-  }
+  if (window.location.search === "") window.location.search += "theme=dark";
+  else if (window.location.search.lastIndexOf("theme=dark") === -1)
+    window.location.search += "&theme=dark";
 })();
