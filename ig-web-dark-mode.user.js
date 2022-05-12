@@ -14,6 +14,9 @@
   "use strict";
 
   if (window.location.search.lastIndexOf("theme=dark") === -1) {
-    window.location.search += "theme=dark";
+    let append = "theme=dark";
+    if (window.location.search !== "") append = "&" + append;
+
+    window.location.search += append;
   }
 })();
